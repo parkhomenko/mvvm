@@ -1,8 +1,23 @@
 ﻿<Window x:Class="mvvm.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:local="clr-namespace:mvvm.ViewModels"
         Title="MainWindow" Height="350" Width="525">
+    
+    <Window.DataContext>
+        <local:MainViewModel />
+    </Window.DataContext>
+    
     <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
         
+        <Menu HorizontalAlignment="Left" Height="42" Grid.Row="0" VerticalAlignment="Top" Width="500">
+            <Button Height="32" Width="135" Content="Students Information" Command="{Binding StudentsInformationViewCommand}" />
+        </Menu>
+
+        <ContentControl Grid.Row="1" Content="{Binding CurrentUserControl}" Name="ContentView" />
     </Grid>
 </Window>

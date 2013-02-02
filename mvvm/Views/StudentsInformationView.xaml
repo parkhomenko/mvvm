@@ -1,0 +1,38 @@
+﻿<UserControl x:Class="mvvm.Views.StudentsInformationView"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             xmlns:local="clr-namespace:mvvm.ViewModels"
+             mc:Ignorable="d" 
+             d:DesignHeight="300" d:DesignWidth="500">
+    
+    <UserControl.DataContext>
+        <local:StudentsInformation />
+    </UserControl.DataContext>
+    
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+        
+        <TreeView Grid.Column="0">
+        </TreeView>
+        
+        <ListView Grid.Column="1" ItemsSource="{Binding Students}">
+            <ListView.View>
+                <GridView>
+                    <GridView.Columns>
+                        <GridViewColumn Header="LastName" Width="75" DisplayMemberBinding="{Binding Path=LastName}" />
+                        <GridViewColumn Header="FirstName" Width="75" DisplayMemberBinding="{Binding Path=FirstName}" />
+                        <GridViewColumn Header="MiddleName" Width="75" DisplayMemberBinding="{Binding Path=MiddleName}" />
+                    </GridView.Columns>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </Grid>
+</UserControl>
