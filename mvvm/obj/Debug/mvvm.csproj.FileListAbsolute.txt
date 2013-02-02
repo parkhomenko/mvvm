@@ -1,1 +1,2 @@
 E:\Projects\Others\mvvm\mvvm\bin\Debug\mvvm.exe.config
+D:\Projects\Others\mvvm\mvvm\mvvm\bin\Debug\mvvm.exe.config
