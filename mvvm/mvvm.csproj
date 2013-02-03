@@ -53,21 +53,18 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Data\TreeData.cs" />
     <Compile Include="Models\Faculty.cs" />
     <Compile Include="Models\Group.cs" />
     <Compile Include="Models\Student.cs" />
-    <Compile Include="Tree\AppendixItem.cs" />
-    <Compile Include="Tree\ContentItem.cs" />
-    <Compile Include="Tree\DescriptionItem.cs" />
-    <Compile Include="Tree\IItem.cs" />
-    <Compile Include="Tree\QuestionItem.cs" />
-    <Compile Include="Tree\TextItem.cs" />
-    <Compile Include="Tree\TreeTest.cs" />
-    <Compile Include="Tree\TreeViewItem.cs" />
     <Compile Include="Utils\PropertyNotifier.cs" />
     <Compile Include="Utils\RelayCommand.cs" />
+    <Compile Include="Utils\TreeViewBase.cs" />
     <Compile Include="ViewModels\MainViewModel.cs" />
     <Compile Include="ViewModels\StudentsInformation.cs" />
+    <Compile Include="ViewModels\Tree\FacultyViewModel.cs" />
+    <Compile Include="ViewModels\Tree\GroupViewModel.cs" />
+    <Compile Include="ViewModels\Tree\StudentViewModel.cs" />
     <Compile Include="Views\StudentsInformationView.xaml.cs">
       <DependentUpon>StudentsInformationView.xaml</DependentUpon>
     </Compile>

@@ -8,7 +8,9 @@ namespace mvvm.Models
 {
     public class Group
     {
+        public string Id { get; set; }
         public string GroupName { get; set; }
         public string Course { get; set; }
+        public List<Student> Students { get; set; }
     }
 }

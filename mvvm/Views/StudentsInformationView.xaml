@@ -16,23 +16,18 @@
             <RowDefinition Height="*" />
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="100" />
+            <ColumnDefinition Width="300" />
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
-        
-        <TreeView Grid.Column="0">
+
+        <TreeView Grid.Column="0" Name="StudentsTree" ItemsSource="{Binding Parent}">
+            <TreeView.ItemTemplate>
+                <HierarchicalDataTemplate ItemsSource="{Binding Path=Children}">
+                    <StackPanel Orientation="Horizontal">
+                        <TextBlock Text="{Binding Path=Text}" Margin="0 0 5 0"/>
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+            </TreeView.ItemTemplate>
         </TreeView>
-        
-        <ListView Grid.Column="1" ItemsSource="{Binding Students}">
-            <ListView.View>
-                <GridView>
-                    <GridView.Columns>
-                        <GridViewColumn Header="LastName" Width="75" DisplayMemberBinding="{Binding Path=LastName}" />
-                        <GridViewColumn Header="FirstName" Width="75" DisplayMemberBinding="{Binding Path=FirstName}" />
-                        <GridViewColumn Header="MiddleName" Width="75" DisplayMemberBinding="{Binding Path=MiddleName}" />
-                    </GridView.Columns>
-                </GridView>
-            </ListView.View>
-        </ListView>
     </Grid>
 </UserControl>
