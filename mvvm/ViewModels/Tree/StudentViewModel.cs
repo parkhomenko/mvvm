@@ -14,8 +14,7 @@ namespace mvvm.ViewModels.Tree
         {
             this.student = student;
 
-            Name = student.Id;
-            Text = student.LastName + " " + student.FirstName;
+            Name = student.LastName + " " + student.FirstName;
         }
 
         private Student student;

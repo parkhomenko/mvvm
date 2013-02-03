@@ -22,8 +22,6 @@ namespace mvvm.Utils
         }
 
         private string name;
-        private string text;
-
         public string Name
         {
             get { return name; }
@@ -31,16 +29,6 @@ namespace mvvm.Utils
             {
                 name = value;
                 RaisePropertyChanged("Name");
-            }
-        }
-
-        public string Text
-        {
-            get { return text; }
-            set
-            {
-                text = value;
-                RaisePropertyChanged("Text");
             }
         }
     }

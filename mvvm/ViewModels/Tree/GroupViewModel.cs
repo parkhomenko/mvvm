@@ -15,8 +15,7 @@ namespace mvvm.ViewModels.Tree
         {
             this.group = group;
 
-            Name = group.Id;
-            Text = group.GroupName;
+            Name = group.GroupName;
 
             children = new ObservableCollection<TreeViewBase>();
             foreach (Student student in group.Students)
