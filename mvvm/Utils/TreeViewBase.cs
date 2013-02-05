@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections.ObjectModel;
+using System.Windows;
 
 namespace mvvm.Utils
 {
     public abstract class TreeViewBase : PropertyNotifier
     {
         protected ObservableCollection<TreeViewBase> children;
+        private string name;
 
         public ObservableCollection<TreeViewBase> Children
         {
@@ -21,7 +23,6 @@ namespace mvvm.Utils
             }
         }
 
-        private string name;
         public string Name
         {
             get { return name; }
@@ -31,5 +32,10 @@ namespace mvvm.Utils
                 RaisePropertyChanged("Name");
             }
         }
+
+        public abstract void DefineName();
+        public abstract string[] GetInfo();
+        public abstract void EditInfo(string[] info);
+        public abstract void AddInfo(string[] info);
     }
 }

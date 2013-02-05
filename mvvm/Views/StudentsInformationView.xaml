@@ -5,7 +5,7 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
              xmlns:local="clr-namespace:mvvm.ViewModels"
              mc:Ignorable="d" 
-             d:DesignHeight="300" d:DesignWidth="500">
+             d:DesignHeight="300" d:DesignWidth="600">
     
     <UserControl.DataContext>
         <local:StudentsInformation />
@@ -20,7 +20,7 @@
             <ColumnDefinition Width="*" />
         </Grid.ColumnDefinitions>
 
-        <TreeView Grid.Column="0" Name="StudentsTree" ItemsSource="{Binding Parent}">
+        <TreeView Grid.Column="0" Name="StudentsTree" ItemsSource="{Binding Parent}" SelectedItemChanged="StudentsTree_SelectedItemChanged_1">
             <TreeView.ItemTemplate>
                 <HierarchicalDataTemplate ItemsSource="{Binding Path=Children}">
                     <StackPanel Orientation="Horizontal">
@@ -29,5 +29,10 @@
                 </HierarchicalDataTemplate>
             </TreeView.ItemTemplate>
         </TreeView>
+        
+        <TextBox x:Name="tbFirst" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="67,58,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="tbSecond" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="67,86,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120"/>
+        <Button Content="Edit" Grid.Column="1" HorizontalAlignment="Left" Margin="37,149,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_1"/>
+        <Button Content="Create" Grid.Column="1" HorizontalAlignment="Left" Margin="145,149,0,0" VerticalAlignment="Top" Width="75" Click="Button_Click_2"/>
     </Grid>
 </UserControl>
